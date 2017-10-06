@@ -122,6 +122,7 @@ vpn() { local server="$1" user="$2" pass="$3" port="${4:-1194}" i \
     [[ "${CIPHER:-""}" ]] && echo "cipher $CIPHER" >>$conf
     [[ "${AUTH:-""}" ]] && echo "auth $AUTH" >>$conf
     echo "tls-client" >>$conf
+    echo "cipher aes-128-cbc" >>$conf
     echo "remote-cert-tls server" >>$conf
     echo "auth-user-pass $auth" >>$conf
     echo "comp-lzo" >>$conf
